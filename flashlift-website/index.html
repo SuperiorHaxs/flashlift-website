@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashLift - Learn While You Work</title>
+    <meta name="description" content="FlashLift delivers flashcards to your desktop automatically. Learn languages, ace exams, and master any subject with smart spaced repetition.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236366F1' width='100' height='100' rx='20'/><text x='50' y='70' text-anchor='middle' font-size='50'>⚡</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(ellipse at top, #EEF2FF 0%, #ffffff 50%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 20px 50px -12px rgba(99, 102, 241, 0.25);
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">⚡</span>
+                <span class="text-xl font-bold text-slate-800">FlashLift</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-slate-600 hover:text-indigo-600 transition">Features</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-indigo-600 transition">How It Works</a>
+                <a href="#demo" class="text-slate-600 hover:text-indigo-600 transition">Try Demo</a>
+            </div>
+            <a href="#download" class="px-5 py-2 gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition">
+                Download Free
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full text-indigo-600 font-medium text-sm mb-6">
+                        <span>🎓</span> Smart Learning for Busy People
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Learn While You <span class="gradient-text">Work</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                        FlashLift delivers flashcards directly to your desktop. No more forgetting to study — cards pop up automatically so you learn throughout the day without breaking your flow.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#download" class="px-8 py-4 gradient-primary text-white rounded-xl font-semibold text-lg hover:opacity-90 transition text-center card-shadow">
+                            ⬇️ Download for Windows
+                        </a>
+                        <a href="#demo" class="px-8 py-4 bg-slate-100 text-slate-700 rounded-xl font-semibold text-lg hover:bg-slate-200 transition text-center">
+                            Try Web Demo →
+                        </a>
+                    </div>
+                    <p class="text-sm text-slate-400 mt-4">✓ Free forever · ✓ No account required · ✓ Works offline</p>
+                </div>
+                <div class="relative float-animation">
+                    <!-- Popup Preview -->
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 text-white card-shadow max-w-sm mx-auto">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span>🧬</span>
+                                <span class="text-sm font-medium opacity-90">Biology</span>
+                            </div>
+                            <span class="text-white/60">×</span>
+                        </div>
+                        <div class="text-center py-8">
+                            <span class="text-4xl mb-4 block">❓</span>
+                            <p class="text-lg font-medium">What is the powerhouse of the cell?</p>
+                            <p class="text-white/50 text-sm mt-4">Click to reveal</p>
+                        </div>
+                        <button class="w-full py-3 bg-white/20 rounded-lg font-medium">Show Answer</button>
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 blur-2xl"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-indigo-400 rounded-full opacity-20 blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="py-20 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                You Want to Learn, But Life Gets in the Way
+            </h2>
+            <p class="text-xl text-slate-600 mb-12">
+                You download flashcard apps. You promise yourself you'll study. But then... you forget. Days pass. The app collects dust. Sound familiar?
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl mb-4 block">😫</span>
+                    <h3 class="font-bold text-slate-800 mb-2">The Problem</h3>
+                    <p class="text-slate-600">You have to remember to open the app. And you're busy. So you don't.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl mb-4 block">💡</span>
+                    <h3 class="font-bold text-slate-800 mb-2">The Solution</h3>
+                    <p class="text-slate-600">FlashLift comes to YOU. Flashcards pop up automatically while you work.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <span class="text-4xl mb-4 block">🚀</span>
+                    <h3 class="font-bold text-slate-800 mb-2">The Result</h3>
+                    <p class="text-slate-600">You learn without trying. 5 minutes here, 5 minutes there. It adds up.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    Everything You Need to Learn Smarter
+                </h2>
+                <p class="text-xl text-slate-600">Powerful features, simple interface</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl mb-4">⏰</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Timed Popups</h3>
+                    <p class="text-slate-600">Cards appear every X minutes/hours. You choose the interval — from 30 seconds to several hours.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Spaced Repetition</h3>
+                    <p class="text-slate-600">SM-2 algorithm ensures you review cards at the optimal time for long-term memory.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">AI Generation</h3>
+                    <p class="text-slate-600">Enter any topic and AI creates flashcards instantly. Learn anything in seconds.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Streak Tracking</h3>
+                    <p class="text-slate-600">Build daily habits with streak counting. Stay motivated and consistent.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Progress Stats</h3>
+                    <p class="text-slate-600">Track your learning with detailed statistics. See accuracy, reviews, and mastery level.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-2xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">System Tray</h3>
+                    <p class="text-slate-600">Runs quietly in the background. Always there, never in the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    How It Works
+                </h2>
+                <p class="text-xl text-slate-600">Get started in under 2 minutes</p>
+            </div>
+            <div class="space-y-8">
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white font-bold shrink-0">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Download & Install</h3>
+                        <p class="text-slate-600">Download FlashLift for Windows. One-click install, no account needed.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white font-bold shrink-0">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Add Your Flashcards</h3>
+                        <p class="text-slate-600">Use pre-made decks, create your own, or generate with AI on any topic.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white font-bold shrink-0">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Set Your Interval</h3>
+                        <p class="text-slate-600">Choose how often cards appear — every 5 minutes, every hour, whatever works for you.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white font-bold shrink-0">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Learn Automatically</h3>
+                        <p class="text-slate-600">Cards pop up while you work. Answer them in seconds, then get back to what you were doing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Try It Right Now
+            </h2>
+            <p class="text-xl text-slate-600 mb-8">
+                Test FlashLift in your browser before downloading. Full features, no install required.
+            </p>
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-8 text-white card-shadow">
+                <span class="text-6xl mb-4 block">🌐</span>
+                <h3 class="text-2xl font-bold mb-4">Web Demo</h3>
+                <p class="text-white/80 mb-6">Experience the full FlashLift app in your browser. Study flashcards, generate with AI, track your progress.</p>
+                <a href="/demo" class="inline-block px-8 py-4 bg-white text-indigo-600 rounded-xl font-semibold text-lg hover:bg-slate-100 transition">
+                    Launch Web Demo →
+                </a>
+                <p class="text-white/60 text-sm mt-4">Note: Web demo doesn't have timed popups (that's a desktop feature)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-20 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    Perfect For
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <span class="text-4xl mb-3 block">🎓</span>
+                    <h3 class="font-bold text-slate-800">Students</h3>
+                    <p class="text-slate-600 text-sm mt-2">Ace exams while doing homework</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <span class="text-4xl mb-3 block">💼</span>
+                    <h3 class="font-bold text-slate-800">Professionals</h3>
+                    <p class="text-slate-600 text-sm mt-2">Learn skills between meetings</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <span class="text-4xl mb-3 block">🌍</span>
+                    <h3 class="font-bold text-slate-800">Language Learners</h3>
+                    <p class="text-slate-600 text-sm mt-2">Build vocabulary passively</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl text-center">
+                    <span class="text-4xl mb-3 block">🧪</span>
+                    <h3 class="font-bold text-slate-800">Lifelong Learners</h3>
+                    <p class="text-slate-600 text-sm mt-2">Master any subject over time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Start Learning Today
+            </h2>
+            <p class="text-xl text-slate-600 mb-8">
+                Free forever. No account required. Your data stays on your computer.
+            </p>
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 card-shadow">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+                    <div class="text-center">
+                        <span class="text-5xl mb-2 block">🪟</span>
+                        <h3 class="font-bold text-slate-800">Windows</h3>
+                        <p class="text-slate-500 text-sm">Windows 10/11</p>
+                    </div>
+                </div>
+                <a href="https://github.com/SuperiorHaxs/flashlift-desktop/releases/latest" 
+                   class="inline-block px-10 py-4 gradient-primary text-white rounded-xl font-semibold text-lg hover:opacity-90 transition card-shadow">
+                    ⬇️ Download for Windows
+                </a>
+                <p class="text-slate-400 text-sm mt-4">v1.0.0 · ~80MB · No admin required</p>
+                <div class="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
+                    <span>✓ Free forever</span>
+                    <span>✓ No ads</span>
+                    <span>✓ Open source</span>
+                </div>
+            </div>
+            <p class="text-slate-500 mt-6">
+                Mac & Linux coming soon. 
+                <a href="https://github.com/SuperiorHaxs/flashlift-desktop" class="text-indigo-600 hover:underline">View on GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-xl">⚡</span>
+                <span class="font-bold text-slate-800">FlashLift</span>
+            </div>
+            <div class="flex items-center gap-6 text-slate-600">
+                <a href="https://github.com/SuperiorHaxs/flashlift-desktop" class="hover:text-indigo-600 transition">GitHub</a>
+                <a href="#features" class="hover:text-indigo-600 transition">Features</a>
+                <a href="#download" class="hover:text-indigo-600 transition">Download</a>
+            </div>
+            <p class="text-slate-400 text-sm">Made with 💜 for learners everywhere</p>
+        </div>
+    </footer>
+</body>
+</html>
